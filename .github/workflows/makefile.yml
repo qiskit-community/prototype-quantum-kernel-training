@@ -1,0 +1,29 @@
+name: Quantum Kernel Training Notebook Tests
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+      - main
+  schedule:
+    - cron: '0 1 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+        with:
+          fetch-depth: 1
+      - name: Install Dependencies
+        run: |
+          pip install matplotlib
+          pip install pandas
+          pip install qiskit
+          pip install git+https://github.com/calebj15/qiskit-machine-learning.git@qka-runtime#egg=qiskit-machine-learning
+        shell: bash
+      - name: Run Makefile
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
+        run: make test
