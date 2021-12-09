@@ -18,6 +18,7 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install matplotlib
+          pip install treon
           pip install pandas
           pip install qiskit
           pip install git+https://github.com/calebj15/qiskit-machine-learning.git@qka-runtime#egg=qiskit-machine-learning
