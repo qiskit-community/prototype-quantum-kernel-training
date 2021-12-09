@@ -1,0 +1,32 @@
+# This code is part of Qiskit.
+#
+# (C) Copyright IBM 2018, 2021.
+#
+# This code is licensed under the Apache License, Version 2.0. You may
+# obtain a copy of this license in the LICENSE.txt file in the root directory
+# of this source tree or at http://www.apache.org/licenses/LICENSE-2.0.
+#
+# Any modifications or derivative works of this code must retain this
+# copyright notice, and modified files need to carry a notice indicating
+# that they have been altered from the originals.
+
+
+"""
+===============================
+Feature Maps (:mod:`qka.feature_maps`)
+===============================
+
+.. currentmodule:: qiskit.feature_maps
+
+.. autosummary::
+   :toctree: ../stubs/
+
+   CovariantFeatureMap
+"""
+
+from .covariant_feature_map import CovariantFeatureMap
+
+
+__all__ = [
+    "CovariantFeatureMap",
+]
