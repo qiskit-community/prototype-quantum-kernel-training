@@ -2,10 +2,9 @@ name: Quantum Kernel Training Notebook Tests
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   pull_request:
-      - main
+    branches: [ main ]
   schedule:
     - cron: '0 1 * * *'
 
