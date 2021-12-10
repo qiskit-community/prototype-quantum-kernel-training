@@ -16,11 +16,13 @@
 
 <!-- TABLE OF CONTENTS -->
 ### Table of Contents
-* [Installation](docs/installation_guide.ipynb)
+* [Installation](docs/installation_guide.md)
 * [Tutorials](docs/tutorials/)
 * [How-Tos](docs/how_tos/)
 * [Background](docs/background/)
-* [Contact](#contact)
+* [Using Quantum Services](#using-quantum-services)
+* [How to Give Feedback](#how-to-give-feedback)
+* [Contribution Guidelines](#contribution-guidelines)
 * [Acknowledgements](#acknowledgements)
 * [References](#references)
 
@@ -85,12 +87,32 @@ The QKT Toolkit includes documentation split into
 
 ----------------------------------------------------------------------------------------------------
 
-<!-- CONTACT -->
-### Contact
+<!-- USING QUANTUM SERVICES -->
+### Using Quantum Services
 
-* Jen Glick - jennifer.r.glick@ibm.com
-* Bryce Fuller - bryce.fuller@ibm.com
-* Caleb Johnson - caleb.johnson@ibm.com
+If you are interested in using quantum services (i.e. using a real quantum computer, not a simulator) you can look at the Qiskit Partners program for partner organizations that have provider packages available for their offerings:
+
+https://qiskit.org/documentation/partners/
+
+
+----------------------------------------------------------------------------------------------------
+
+<!-- HOW TO GIVE FEEDBACK -->
+### How to Give Feedback
+
+Would you like to share your thoughts with us? We encourage you to offer feedback by:
+- Opening an issue in the repository
+- Starting a conversation on GitHub Discussions
+- Sharing your feedback through a survey
+
+
+----------------------------------------------------------------------------------------------------
+
+<!-- CONTRIBUTION GUIDELINES -->
+### Contribution Guidelines
+
+For information on how to contribute to this project, please take a look at our [contribution guidelines](https://github.ibm.com/IBM-Q-Software/quantum-kernel-training/tree/main/CONTRIBUTING.md).
+
 
 ----------------------------------------------------------------------------------------------------
 
