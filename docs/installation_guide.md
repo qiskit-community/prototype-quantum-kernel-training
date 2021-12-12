@@ -7,7 +7,7 @@ Navigate to your workspace and clone the repository using the HTTPS address.
 
 `cd path/to/your/workspace`
 
-`git clone https://github.ibm.com/IBM-Q-Software/quantum-kernel-training.git`
+`git clone https://github.com/IBM-Quantum-Prototypes/quantum-kernel-training.git`
 
 [This Github tutorial](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) provides more information on cloning git repositories using ssh keys.
 
@@ -36,4 +36,4 @@ To make sure the notebooks will run on your local machine, you may test the QKT 
 `make test`
 
 ### Play Around
-After the dependencies have installed, users may run the [tutorials](docs/tutorials) and [guides](docs/how_tos) on their local machines.
+After the dependencies have installed, users may run the [tutorials](tutorials) and [guides](how_tos) on their local machines.
