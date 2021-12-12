@@ -36,4 +36,4 @@ To make sure the notebooks will run on your local machine, you may test the QKT 
 `make test`
 
 ### Play Around
-After the dependencies have installed, users may run the [tutorials](https://github.ibm.com/IBM-Q-Software/quantum-kernel-training/tree/main/docs/tutorials) and [guides](https://github.ibm.com/IBM-Q-Software/quantum-kernel-training/tree/main/docs/how_tos) on their local machines.
+After the dependencies have installed, users may run the [tutorials](docs/tutorials) and [guides](docs/how_tos) on their local machines.

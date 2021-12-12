@@ -11,7 +11,7 @@ assignees: ''
 A clear and concise description of what the bug is.
 
 **To Reproduce**
-Give some steps that show the bug.  A minimal working exampl of code with output is best.  If you are copying in code, please remember to enclose it in triple backticks, ``` [multiline code goes here] ```, so that it displays correctly. 
+Give some steps that show the bug.  A minimal working example of code with output is best.  If you are copying in code, please remember to enclose it in triple backticks, ``` [multiline code goes here] ```, so that it displays correctly.
 
 **Expected behavior**
 A clear and concise description of what you expected to happen.

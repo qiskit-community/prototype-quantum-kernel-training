@@ -8,17 +8,17 @@ Specific details for contributing to this project are outlined below.
 
 ### Reporting Bugs and Requesting Features
 
-Users are encouraged to use Github Issues for reporting issues are requesting features.
+Users are encouraged to use Github Issues for reporting issues and requesting features.
 
 ### Ask/Answer Questions and Discuss Quantum Kernel Training
 
 Users are encouraged to use Github Discussions for engaging with researchers, developers, and other users regarding quantum kernel training and the provided examples.
 
-### Project Code Style.
+### Project Code Style
 
 Code in this repository should conform to PEP8 standards. Style/lint checks are run to validate this. Line length must be limited to no more than 100 characters.
 
-### Pull request checklist
+### Pull Request Checklist
 
 When submitting a pull request and you feel it is ready for review,
 please ensure that:
