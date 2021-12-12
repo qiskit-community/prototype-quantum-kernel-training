@@ -142,3 +142,10 @@ The initial codebase was written by Jennifer R. Glick and Tanvi P. Gujarati.
 [7] N. Cristianini et al. Advances in Neural Information Processing Systems 14 (2001) [link](https://proceedings.neurips.cc/paper/2001/file/1f71e393b3809197ed66df836fe833e5-Paper.pdf)<br>
 
 Qiskit Global Summer School on Quantum Machine Learning (in particular, lectures [6.1](https://learn.qiskit.org/summer-school/2021/lec6-1-from-variational-classifiers-linear-classifiers), [6.2](https://learn.qiskit.org/summer-school/2021/lec6-2-quantum-feature-spaces-kernels), and [6.3](https://learn.qiskit.org/summer-school/2021/lec7-1-quantum-kernels-practice))
+
+
+----------------------------------------------------------------------------------------------------
+
+<!-- LICENSE -->
+### License
+[Apache License 2.0](LICENSE.txt)
