@@ -1,10 +1,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.ibm.com/IBM-Q-Software/quantum-kernel-training">
+  <a href="quantum-kernel-training">
     <img src="docs/images/qkt_image.png" alt="Logo" width="350">
   </a>
-
   <h2 align="center">Quantum Kernel Training Toolkit</h2>
 
   <p align="center">
@@ -16,11 +15,13 @@
 
 <!-- TABLE OF CONTENTS -->
 ### Table of Contents
-* [Installation](docs/installation_guide.ipynb)
+* [Installation](docs/installation_guide.md)
 * [Tutorials](docs/tutorials/)
 * [How-Tos](docs/how_tos/)
 * [Background](docs/background/)
-* [Contact](#contact)
+* [Using Quantum Services](#using-quantum-services)
+* [How to Give Feedback](#how-to-give-feedback)
+* [Contribution Guidelines](#contribution-guidelines)
 * [Acknowledgements](#acknowledgements)
 * [References](#references)
 
@@ -46,7 +47,7 @@ Given a labeled dataset, optimize a parametrized quantum kernel for a machine le
 
 Kernel methods are widespread in machine learning applications. A kernel is a similarity measure between data encoded in a high-dimensional feature space and can be utilized, for instance, in classification tasks with support vector machines. It is known that quantum computers can be used to replace classical feature spaces by encoding data in a quantum-enhanced feature space. In 2019, IBM introduced an algorithm called the quantum kernel estimator (QKE) for computing quantum kernels with data provided classically [2]. A key observation of this work was that a necessary condition for a computational advantage requires quantum circuits for the kernel that are hard to estimate classically. More recently, IBM proved that a quantum kernel can offer superpolynomial speedups over any classical learner on a particular learning problem based on the hardness of the discrete logarithm problem [3]. These results indicate that quantum kernels are an increasingly promising approach in machine learning problems. 
 
-However, finding a good quantum kernel for any given dataset can be a challenging problem in practice. Sometimes, structure in the data can inform this selection, other times a kernel is chosen in an ad hoc manner. Quantum Kernel Alignment (QKA) is one approach to learning a quantum kernel on a dataset. This technique iteratively adapts a parametrized quantum kernel to have high similarity to a target kernel informed from the underlying data distribution, while converging to the maximum SVM margin [4]. Such an approach is tied to the generalization error of the machine learning model; that is, QKA finds a quantum kernel, from a family of kernels, that yields the smallest upper bound to the generalization error. For data with an underlying group structure, covariant quantum kernels can be designed to exploit that structure. In this case, QKA provides a way to optimize the fiducial state of the quantum feature map on such a dataset. This toolkit provides examples of datasets with group structure and corresponding covariant quantum kernels. More information can be found in the [background material](https://github.ibm.com/IBM-Q-Software/quantum-kernel-training/blob/main/docs/background/qkernels_and_data_w_group_structure.ipynb) and in Ref. [4].
+However, finding a good quantum kernel for any given dataset can be a challenging problem in practice. Sometimes, structure in the data can inform this selection, other times a kernel is chosen in an ad hoc manner. Quantum Kernel Alignment (QKA) is one approach to learning a quantum kernel on a dataset. This technique iteratively adapts a parametrized quantum kernel to have high similarity to a target kernel informed from the underlying data distribution, while converging to the maximum SVM margin [4]. Such an approach is tied to the generalization error of the machine learning model; that is, QKA finds a quantum kernel, from a family of kernels, that yields the smallest upper bound to the generalization error. For data with an underlying group structure, covariant quantum kernels can be designed to exploit that structure. In this case, QKA provides a way to optimize the fiducial state of the quantum feature map on such a dataset. This toolkit provides examples of datasets with group structure and corresponding covariant quantum kernels. More information can be found in the [background material](background/qkernels_and_data_w_group_structure.ipynb) and in Ref. [4].
 
 To enable future research on quantum kernel training algorithms, this toolkit is extensible to methods beyond QKA. More information about the design is provided in the next section.
 
@@ -73,24 +74,44 @@ This framework is extensible to other loss functions and optimizers and is compa
 
 ***Datasets and Feature Maps***
 
-The QKT toolkit includes datasets useful for illustrating how to train quantum kernels. Two [datasets with a particular underlying group structure](https://github.ibm.com/IBM-Q-Software/quantum-kernel-training/tree/main/data) are provided for 7 and 10 qubits. These datasets can be used with a [covariant quantum kernel](https://github.ibm.com/IBM-Q-Software/quantum-kernel-training/tree/main/qka/feature_maps/covariant_feature_map.py) to test and explore kernel training algorithms. More information about the datasets and kernel can be found in the [background material](https://github.ibm.com/IBM-Q-Software/quantum-kernel-training/blob/main/docs/background/qkernels_and_data_w_group_structure.ipynb).
+The QKT toolkit includes datasets useful for illustrating how to train quantum kernels. Two [datasets with a particular underlying group structure](data) are provided for 7 and 10 qubits. These datasets can be used with a [covariant quantum kernel](qkt/feature_maps/covariant_feature_map.py) to test and explore kernel training algorithms. More information about the datasets and kernel can be found in the [background material](docs/background/qkernels_and_data_w_group_structure.ipynb).
 
 ***Documentation***
 
 The QKT Toolkit includes documentation split into
-- [Tutorials](https://github.ibm.com/IBM-Q-Software/quantum-kernel-training/tree/main/docs/tutorials) longer examples of end-to-end usage
-- [How-to guides](https://github.ibm.com/IBM-Q-Software/quantum-kernel-training/tree/main/docs/how_tos) targeted answers to common questions
-- [Background material](https://github.ibm.com/IBM-Q-Software/quantum-kernel-training/tree/main/docs/background) In-depth information about quantum kernels and algorithms
+- [Tutorials](docs/tutorials) longer examples of end-to-end usage
+- [How-to guides](docs/how_tos) targeted answers to common questions
+- [Background material](docs/background) In-depth information about quantum kernels and algorithms
 
 
 ----------------------------------------------------------------------------------------------------
 
-<!-- CONTACT -->
-### Contact
+<!-- USING QUANTUM SERVICES -->
+### Using Quantum Services
 
-* Jen Glick - jennifer.r.glick@ibm.com
-* Bryce Fuller - bryce.fuller@ibm.com
-* Caleb Johnson - caleb.johnson@ibm.com
+If you are interested in using quantum services (i.e. using a real quantum computer, not a simulator) you can look at the Qiskit Partners program for partner organizations that have provider packages available for their offerings:
+
+https://qiskit.org/documentation/partners/
+
+
+----------------------------------------------------------------------------------------------------
+
+<!-- HOW TO GIVE FEEDBACK -->
+### How to Give Feedback
+
+We encourage your feedback! You can share your thoughts with us by:
+- Opening an issue in the repository
+- Starting a conversation on GitHub Discussions
+- Filling out our survey
+
+
+----------------------------------------------------------------------------------------------------
+
+<!-- CONTRIBUTION GUIDELINES -->
+### Contribution Guidelines
+
+For information on how to contribute to this project, please take a look at our [contribution guidelines](CONTRIBUTING.md).
+
 
 ----------------------------------------------------------------------------------------------------
 
