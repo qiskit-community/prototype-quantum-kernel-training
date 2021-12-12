@@ -24,6 +24,7 @@
 * [Contribution Guidelines](#contribution-guidelines)
 * [Acknowledgements](#acknowledgements)
 * [References](#references)
+* [License](#license)
 
 
 ----------------------------------------------------------------------------------------------------
