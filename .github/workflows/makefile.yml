@@ -3,7 +3,7 @@ name: Quantum Kernel Training Notebook Tests
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
-  test:
+  tests:
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
