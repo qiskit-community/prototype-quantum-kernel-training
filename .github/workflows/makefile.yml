@@ -22,4 +22,6 @@ jobs:
           pip freeze
         shell: bash
       - name: Run Makefile
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
         run: make test
