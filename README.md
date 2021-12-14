@@ -101,8 +101,8 @@ https://qiskit.org/documentation/partners/
 ### How to Give Feedback
 
 We encourage your feedback! You can share your thoughts with us by:
-- Opening an issue in the repository
-- Starting a conversation on GitHub Discussions
+- [Opening an issue](https://github.com/IBM-Quantum-Prototypes/quantum-kernel-training/issues) in the repository
+- [Starting a conversation on GitHub Discussions](https://github.com/IBM-Quantum-Prototypes/quantum-kernel-training/discussions)
 - Filling out our survey
 
 
