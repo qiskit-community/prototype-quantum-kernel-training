@@ -1,5 +1,4 @@
 certifi==2021.10.8
 matplotlib==3.4.3
 pandas==1.3.4
-qiskit
-git+https://github.com/calebj15/qiskit-machine-learning.git@qka-runtime#egg=qiskit-machine-learning
+qiskit==0.34.1
