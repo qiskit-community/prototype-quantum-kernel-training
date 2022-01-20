@@ -1,4 +1,4 @@
-name: Quantum Kernel Training Notebook Tests
+name: Latest Version Notebook Tests
 
 on:
   push:
