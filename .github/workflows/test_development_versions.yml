@@ -1,4 +1,4 @@
-name: Development Version Notebook Tests
+name: Qiskit Development Version Notebook Tests
 
 on:
   push:
