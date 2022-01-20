@@ -18,7 +18,8 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install -U pip
-          pip install -r requirements-dev.txt -r requirements.txt \
+          pip install -r requirements-dev.txt -r requirements.txt
+          pip install \
               git+https://github.com/Qiskit/qiskit-terra.git \
               git+https://github.com/Qiskit/qiskit-aer.git \
               git+https://github.com/Qiskit/qiskit-machine-learning.git
