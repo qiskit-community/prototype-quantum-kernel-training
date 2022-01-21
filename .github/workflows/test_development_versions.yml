@@ -1,4 +1,4 @@
-name: Latest Version Notebook Tests
+name: Qiskit Development Version Notebook Tests
 
 on:
   push:
@@ -18,6 +18,8 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install -U pip
+          sed -i 's|^\(qiskit[A-Za-z-]*\).*|git+https://github.com/Qiskit/\1|' \
+              requirements-dev.txt requirements.txt
           pip install -r requirements-dev.txt -r requirements.txt
           pip freeze
         shell: bash
