@@ -19,7 +19,6 @@
 * [Tutorials](docs/tutorials/)
 * [How-Tos](docs/how_tos/)
 * [Background](docs/background/)
-* [Using Quantum Services](#using-quantum-services)
 * [How to Give Feedback](#how-to-give-feedback)
 * [Contribution Guidelines](#contribution-guidelines)
 * [Acknowledgements](#acknowledgements)
@@ -83,16 +82,6 @@ The QKT Toolkit includes documentation split into
 - [Tutorials](docs/tutorials): longer examples of end-to-end usage
 - [How-to guides](docs/how_tos): targeted answers to common questions
 - [Background material](docs/background): in-depth information about quantum kernels and algorithms
-
-
-----------------------------------------------------------------------------------------------------
-
-<!-- USING QUANTUM SERVICES -->
-### Using Quantum Services
-
-If you are interested in using quantum services (i.e. using a real quantum computer, not a simulator) you can look at the Qiskit Partners program for partner organizations that have provider packages available for their offerings:
-
-https://qiskit.org/documentation/partners/
 
 
 ----------------------------------------------------------------------------------------------------
