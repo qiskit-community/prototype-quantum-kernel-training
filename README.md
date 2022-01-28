@@ -19,7 +19,6 @@
 * [Tutorials](docs/tutorials/)
 * [How-Tos](docs/how_tos/)
 * [Background](docs/background/)
-* [Using Quantum Services](#using-quantum-services)
 * [How to Give Feedback](#how-to-give-feedback)
 * [Contribution Guidelines](#contribution-guidelines)
 * [Acknowledgements](#acknowledgements)
@@ -66,7 +65,6 @@ The structure of the QKT Toolkit is illustrated in the diagram below. New compon
 ***New Integrations into Qiskit Machine Learning***
 
 * `QuantumKernelTrainer`: (New) Class to manage quantum kernel training for a given loss function and optimizer.
-* `QuantumKernelTrainerClient`: (Coming Soon) Client to call the quantum kernel trainer program in Qiskit Runtime. Interchangable with `QuantumKernelTrainer`.
 * `QuantumKernel`: Option to handle quantum kernels with trainable parameters.
 * `KernelLoss`: (New) Base class to calculate loss of quantum kernel functions over trainable parameters and input data.
 * `SVCLoss(KernelLoss)`: (New) Class to compute loss corresponding to QKA for classification tasks.
@@ -83,16 +81,6 @@ The QKT Toolkit includes documentation split into
 - [Tutorials](docs/tutorials): longer examples of end-to-end usage
 - [How-to guides](docs/how_tos): targeted answers to common questions
 - [Background material](docs/background): in-depth information about quantum kernels and algorithms
-
-
-----------------------------------------------------------------------------------------------------
-
-<!-- USING QUANTUM SERVICES -->
-### Using Quantum Services
-
-If you are interested in using quantum services (i.e. using a real quantum computer, not a simulator) you can look at the Qiskit Partners program for partner organizations that have provider packages available for their offerings:
-
-https://qiskit.org/documentation/partners/
 
 
 ----------------------------------------------------------------------------------------------------
