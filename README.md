@@ -1,3 +1,11 @@
+<!-- SHIELDS -->
+[![Qiskit](https://img.shields.io/badge/Qiskit-0.34.1%20or%20later-informational)](https://qiskit.org/)
+[![Python](https://img.shields.io/badge/Python-3.9-informational)](https://www.python.org/)
+[![License](https://img.shields.io/github/license/IBM-Quantum-Prototypes/quantum-kernel-training?color=informational&label=License)](https://github.com/IBM-Quantum-Prototypes/quantum-kernel-training/blob/main/LICENSE.txt)
+[![Tests](https://github.com/IBM-Quantum-Prototypes/quantum-kernel-training/actions/workflows/makefile.yml/badge.svg)](https://github.com/IBM-Quantum-Prototypes/quantum-kernel-training/actions/workflows/makefile.yml)
+
+
+
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
