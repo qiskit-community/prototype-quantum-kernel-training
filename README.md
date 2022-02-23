@@ -1,7 +1,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="quantum-kernel-training">
+  <a href="https://github.com/IBM-Quantum-Prototypes/quantum-kernel-training#readme">
     <img src="docs/images/qkt_image.png" alt="Logo" width="350">
   </a>
   <h2 align="center">Quantum Kernel Training Toolkit</h2>
