@@ -40,4 +40,4 @@ make test
 ```
 
 ### Play Around
-After the dependencies have installed, users may run the [tutorials](tutorials) and [guides](how_tos) on their local machines.
+After the dependencies have installed, users may run the [tutorials](docs/tutorials) and [guides](docs/how_tos) on their local machines.

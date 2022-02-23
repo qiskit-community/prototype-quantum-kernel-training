@@ -17,7 +17,7 @@
 
 <!-- TABLE OF CONTENTS -->
 ### Table of Contents
-* [Installation](docs/installation_guide.md)
+* [Installation](INSTALL.md)
 * [Tutorials](docs/tutorials/)
 * [How-Tos](docs/how_tos/)
 * [Background](docs/background/)
