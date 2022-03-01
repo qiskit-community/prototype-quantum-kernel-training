@@ -1,8 +1,9 @@
 <!-- SHIELDS -->
 ![Platform](https://img.shields.io/badge/Platform-Linux%20%7C%20macOS%20%7C%20Windows-informational)
-[![Qiskit](https://img.shields.io/badge/Qiskit-0.34.1%20or%20later-informational)](https://qiskit.org/)
 [![Python](https://img.shields.io/badge/Python-3.7%20%7C%203.8%20%7C%203.9%20%7C%203.10-informational)](https://www.python.org/)
-[![License](https://img.shields.io/github/license/IBM-Quantum-Prototypes/quantum-kernel-training?color=informational&label=License)](https://github.com/IBM-Quantum-Prototypes/quantum-kernel-training/blob/main/LICENSE.txt)
+[![Qiskit](https://img.shields.io/badge/Qiskit-%E2%89%A5%200.34.1-6133BD)](https://github.com/Qiskit/qiskit)
+[![Qiskit Machine Learning](https://img.shields.io/badge/Qiskit%20Machine%20Learning-%E2%89%A5%200.3.0-6133BD)](https://github.com/Qiskit/qiskit-machine-learning)
+[![License](https://img.shields.io/github/license/IBM-Quantum-Prototypes/quantum-kernel-training?label=License)](https://github.com/IBM-Quantum-Prototypes/quantum-kernel-training/blob/main/LICENSE.txt)
 [![Tests](https://github.com/IBM-Quantum-Prototypes/quantum-kernel-training/actions/workflows/makefile.yml/badge.svg)](https://github.com/IBM-Quantum-Prototypes/quantum-kernel-training/actions/workflows/makefile.yml)
 
 
