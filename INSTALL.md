@@ -7,7 +7,7 @@ Navigate to your workspace and clone the repository using the HTTPS address.
 
 ```
 cd path/to/your/workspace
-git clone https://github.com/IBM-Quantum-Prototypes/quantum-kernel-training.git
+git clone https://github.com/IBM-Quantum-prototypes/quantum-kernel-training.git
 ```
 
 [This Github tutorial](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) provides more information on cloning git repositories using ssh keys.
