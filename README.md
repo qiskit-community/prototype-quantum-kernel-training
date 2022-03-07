@@ -37,6 +37,7 @@
 * [How to Give Feedback](#how-to-give-feedback)
 * [Contribution Guidelines](#contribution-guidelines)
 * [Acknowledgements](#acknowledgements)
+* [About Prototypes](#about-prototypes)
 * [References](#references)
 * [License](#license)
 
@@ -125,6 +126,16 @@ For information on how to contribute to this project, please take a look at our 
 This toolkit is based on the research described in [[1]](#references).
 
 The initial codebase was written by Jennifer R. Glick and Tanvi P. Gujarati.
+
+
+----------------------------------------------------------------------------------------------------
+
+<!-- ABOUT PROTOTYPES -->
+### About prototypes
+
+Prototypes is a collaboration between developers and researchers that will give users access to prototypes from cutting-edge research in areas like quantum simulation and machine learning. These software packages are built on top of, and may eventually be integrated into the Qiskit SDK. They are a contribution as part of the Qiskit community.
+
+Check out our [blog post](https://medium.com/qiskit/try-out-the-latest-advances-in-quantum-computing-with-ibm-quantum-prototypes-11f51124cb61) for more information!
 
 
 ----------------------------------------------------------------------------------------------------
