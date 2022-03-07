@@ -28,7 +28,6 @@ jobs:
             pip install -r requirements-dev.txt
       - name: Run Tests
         run: |
-          nbqa pylint docs/
           treon docs/ --threads 5
         shell: bash
   tests_macos:
@@ -53,7 +52,6 @@ jobs:
       - name: Run Tests
         run: |
           set -e
-          nbqa pyling docs/
           treon docs/ --threads 5
         shell: bash
   tests_windows:
@@ -78,6 +76,5 @@ jobs:
       - name: Run Tests
         run: |
           set -e
-          nbqa pyling docs/
           treon docs/ --threads 5
         shell: bash
