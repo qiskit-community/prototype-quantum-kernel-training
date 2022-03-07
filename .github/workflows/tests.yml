@@ -22,14 +22,12 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install Entanglement Forging
+      - name: Install Quantum Kernel Training 
         run: |
-            set -e
             pip install -r requirements.txt
             pip install -r requirements-dev.txt
       - name: Run Tests
         run: |
-          set -e
           nbqa pylint docs/
           treon docs/ --threads 5
         shell: bash
@@ -47,7 +45,7 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install Entanglement Forging
+      - name: Install Quantum Kernel Training 
         run: |
             set -e
             pip install -r requirements.txt
@@ -72,7 +70,7 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Install Entanglement Forging
+      - name: Install Quantum Kernel Training
         run: |
             set -e
             pip install -r requirements.txt
