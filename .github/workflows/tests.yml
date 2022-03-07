@@ -11,7 +11,6 @@ jobs:
   tests_linux:
     runs-on: ${{ matrix.os }}
     needs: []
-    timeout-minutes: 60
     strategy:
       matrix:
         python-version: [3.7, 3.8, 3.9, "3.10"]
