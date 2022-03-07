@@ -1,0 +1,94 @@
+name: Tests
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+concurrency:
+  group: ${{ github.repository }}-${{ github.ref }}-${{ github.head_ref }}-${{ github.workflow }}
+  cancel-in-progress: true
+jobs:
+  tests_linux:
+    runs-on: ${{ matrix.os }}
+    needs: []
+    timeout-minutes: 60
+    strategy:
+      matrix:
+        python-version: [3.7, 3.8, 3.9, 3.10]
+        os: ["ubuntu-latest"]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install Entanglement Forging
+        run: |
+            set -e
+            pip install -U build wheel
+            python -m build
+            cd dist && pip install -U entanglement_forging*.whl 
+      - name: Run Tests
+        run: |
+          set -e
+          pip install -U -r requirements-dev.txt
+          pylint -rn entanglement_forging/
+          python -m unittest -v
+          treon docs/ --threads 5
+        shell: bash
+  tests_macos:
+    runs-on: ${{ matrix.os }}
+    needs: []
+    timeout-minutes: 60
+    strategy:
+      matrix:
+        python-version: [3.7, 3.8, 3.9, 3.10]
+        os: ["macOS-latest"]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install Entanglement Forging
+        run: |
+            set -e
+            pip install -U build wheel
+            python -m build
+            cd dist && pip install -U entanglement_forging*.whl 
+      - name: Run Tests
+        run: |
+          set -e
+          pip install -U -r requirements-dev.txt
+          pylint -rn entanglement_forging/
+          python -m unittest -v
+          treon docs/ --threads 5
+        shell: bash
+  tests_windows:
+    runs-on: ${{ matrix.os }}
+    needs: []
+    timeout-minutes: 60
+    strategy:
+      matrix:
+        python-version: [3.7, 3.8, 3.9, 3.10]
+        os: ["windows-2019"]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install Entanglement Forging
+        run: |
+            set -e
+            pip install -U build wheel
+            python -m build
+            cd dist && pip install -U entanglement_forging*.whl 
+      - name: Run Tests
+        run: |
+          set -e
+          pip install -U -r requirements-dev.txt
+          pylint -rn entanglement_forging/
+          python -m unittest -v
+          treon docs/ --threads 5
+        shell: bash
