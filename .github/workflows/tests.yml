@@ -1,21 +1,23 @@
 name: Tests
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
-    branches: [main]
-concurrency:
-  group: ${{ github.repository }}-${{ github.ref }}-${{ github.head_ref }}-${{ github.workflow }}
+    branches:
+      - main
+  schedule:
+    # run every day at 1AM
+    - cron: '0 1 * * *'
   cancel-in-progress: true
 jobs:
-  tests_linux:
+  tests_all:
     runs-on: ${{ matrix.os }}
-    needs: []
     timeout-minutes: 60
     strategy:
       matrix:
         python-version: [3.7, 3.8, 3.9, "3.10"]
-        os: ["ubuntu-latest"]
+        os: ["ubuntu-latest", "windows-19", "macOS-latest"]
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python ${{ matrix.python-version }}
@@ -26,55 +28,7 @@ jobs:
         run: |
             pip install -r requirements.txt
             pip install -r requirements-dev.txt
-      - name: Run Tests
-        run: |
-          treon docs/ --threads 5
         shell: bash
-  tests_macos:
-    runs-on: ${{ matrix.os }}
-    needs: []
-    timeout-minutes: 60
-    strategy:
-      matrix:
-        python-version: [3.7, 3.8, 3.9, "3.10"]
-        os: ["macOS-latest"]
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
-      - name: Install Quantum Kernel Training 
-        run: |
-            set -e
-            pip install -r requirements.txt
-            pip install -r requirements-dev.txt
       - name: Run Tests
-        run: |
-          set -e
-          treon docs/ --threads 5
-        shell: bash
-  tests_windows:
-    runs-on: ${{ matrix.os }}
-    needs: []
-    timeout-minutes: 60
-    strategy:
-      matrix:
-        python-version: [3.7, 3.8, 3.9, "3.10"]
-        os: ["windows-2019"]
-    steps:
-      - uses: actions/checkout@v2
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
-        with:
-          python-version: ${{ matrix.python-version }}
-      - name: Install Quantum Kernel Training
-        run: |
-            set -e
-            pip install -r requirements.txt
-            pip install -r requirements-dev.txt
-      - name: Run Tests
-        run: |
-          set -e
-          treon docs/ --threads 5
+        run: treon docs/ --threads 5
         shell: bash
