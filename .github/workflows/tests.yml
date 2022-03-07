@@ -14,7 +14,7 @@ jobs:
     timeout-minutes: 60
     strategy:
       matrix:
-        python-version: [3.7, 3.8, 3.9]
+        python-version: [3.7, 3.8, 3.9, "3.10"]
         os: ["ubuntu-latest", "macOS-latest", "windows-2019"]
     steps:
       - uses: actions/checkout@v2
@@ -27,6 +27,7 @@ jobs:
             set -e
             pip install -r requirements.txt
             pip install -r requirements-dev.txt
+            pip freeze
         shell: bash
       - name: Run Tests
         run: |
