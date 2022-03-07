@@ -14,7 +14,7 @@ jobs:
     timeout-minutes: 60
     strategy:
       matrix:
-        python-version: [3.7, 3.8, 3.9, 3.10]
+        python-version: [3.7, 3.8, 3.9, "3.10"]
         os: ["ubuntu-latest"]
     steps:
       - uses: actions/checkout@v2
@@ -42,7 +42,7 @@ jobs:
     timeout-minutes: 60
     strategy:
       matrix:
-        python-version: [3.7, 3.8, 3.9, 3.10]
+        python-version: [3.7, 3.8, 3.9, "3.10"]
         os: ["macOS-latest"]
     steps:
       - uses: actions/checkout@v2
@@ -70,7 +70,7 @@ jobs:
     timeout-minutes: 60
     strategy:
       matrix:
-        python-version: [3.7, 3.8, 3.9, 3.10]
+        python-version: [3.7, 3.8, 3.9, "3.10"]
         os: ["windows-2019"]
     steps:
       - uses: actions/checkout@v2
