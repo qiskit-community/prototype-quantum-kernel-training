@@ -4,7 +4,7 @@
 [![Qiskit](https://img.shields.io/badge/Qiskit-%E2%89%A5%200.34.1-6133BD)](https://github.com/Qiskit/qiskit)
 [![Qiskit Machine Learning](https://img.shields.io/badge/Qiskit%20Machine%20Learning-%E2%89%A5%200.3.0-6133BD)](https://github.com/Qiskit/qiskit-machine-learning)
 [![License](https://img.shields.io/github/license/qiskit-community/prototype-quantum-kernel-training?label=License)](https://github.com/qiskit-community/prototype-quantum-kernel-training/blob/main/LICENSE.txt)
-[![Tests](https://github.com/qiskit-community/prototype-quantum-kernel-training/actions/workflows/makefile.yml/badge.svg)](https://github.com/qiskit-community/prototype-quantum-kernel-training/actions/workflows/makefile.yml)
+[![Tests](https://github.com/qiskit-community/prototype-quantum-kernel-training/actions/workflows/tests.yml/badge.svg)](https://github.com/qiskit-community/prototype-quantum-kernel-training/actions/workflows/tests.yml)
 
 
 
