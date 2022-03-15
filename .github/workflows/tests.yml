@@ -8,11 +8,11 @@ concurrency:
   group: ${{ github.repository }}-${{ github.ref }}-${{ github.head_ref }}-${{ github.workflow }}
   cancel-in-progress: true
 jobs:
+  matrix:
+    python-version: [3.7, 3.8, 3.9, "3.10"]
+    os: ["ubuntu-latest", "macOS-latest", "windows-latest"]
   tests:
     strategy:
-      matrix:
-        python-version: [3.7, 3.8, 3.9, "3.10"]
-        os: ["ubuntu-latest", "macOS-latest", "windows-latest"]
     runs-on: ${{ matrix.os }}
     needs: []
     timeout-minutes: 60
