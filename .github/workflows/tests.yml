@@ -10,6 +10,7 @@ jobs:
     strategy:
       matrix:
         include:
+          - os: ["ubuntu_latest", "macOS-latest", "windows-latest"]
           - python-version: 3.7
             TOXENV: "py37"
           - python-version: 3.8
