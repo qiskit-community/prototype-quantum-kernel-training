@@ -32,7 +32,7 @@ jobs:
       - name: Test with tox 
         env:
           TOXENV: ${{ matrix.TOXENV }}
-        run: tox
+        run: python -m tox
   test_macOS:
     runs-on: macOS-latest
     strategy:
@@ -60,7 +60,7 @@ jobs:
       - name: Test with tox
         env:
           TOXENV: ${{ matrix.TOXENV }}
-        run: tox
+        run: python -m tox
   test_windows:
     runs-on: windows-latest
     strategy:
@@ -88,4 +88,4 @@ jobs:
       - name: Test with tox
         env:
           TOXENV: ${{ matrix.TOXENV }}
-        run: tox
+        run: python -m tox
