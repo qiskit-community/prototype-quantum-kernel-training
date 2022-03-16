@@ -7,6 +7,7 @@ on:
 jobs:
   test_linux:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     strategy:
       matrix:
         include:
@@ -32,6 +33,7 @@ jobs:
       - name: Test with tox 
         env:
           TOXENV: ${{ matrix.TOXENV }}
+          PYTHONUNBUFFERED: 1
         run: python -m tox
 
   test_macOS:
@@ -86,7 +88,7 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install Dependencies
-        run: pip install --upgrade pip tox
+        run: pip install --upgrade pip tox --user
       - name: Test with tox
         env:
           TOXENV: ${{ matrix.TOXENV }}
