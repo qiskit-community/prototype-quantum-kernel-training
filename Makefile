@@ -10,8 +10,6 @@
 
 .PHONY: lint test copyright
 
-lint:
-	nbqa pylint docs/ 
-
 test:
+	black --check docs
 	treon docs/ --threads 5
