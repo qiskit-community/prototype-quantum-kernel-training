@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [main]
   schedule:
-    - cron: '0 1 * * *'
+    - cron: '0 0 ? * 0 *'
 jobs:
   test_linux:
     runs-on: ubuntu-latest
@@ -32,7 +32,7 @@ jobs:
       - name: Test with Make
         env:
           TOXENV: ${{ matrix.TOXENV }}
-        run: pip install -r requirements.txt && make test
+        run: pip install -r requirements.txt requirements-dev.txt && make test
 
   test_macOS:
     runs-on: macOS-latest
@@ -61,7 +61,7 @@ jobs:
       - name: Test with Make
         env:
           TOXENV: ${{ matrix.TOXENV }}
-        run: pip install -r requirements.txt && make test
+        run: pip install -r requirements.txt requirements-dev.txt && make test
 
   test_windows:
     runs-on: windows-latest
@@ -90,4 +90,4 @@ jobs:
       - name: Test with Make
         env:
           TOXENV: ${{ matrix.TOXENV }}
-        run: pip install -r requirements.txt && make test
+        run: pip install -r requirements.txt requirements-dev.txt && make test
