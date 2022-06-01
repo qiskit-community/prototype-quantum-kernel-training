@@ -8,8 +8,10 @@
 # copyright notice, and modified files need to carry a notice indicating
 # that they have been altered from the originals.
 
-.PHONY: lint test copyright
+.PHONY: lint test
+
+lint:
+	black --check docs
 
 test:
-	black --check docs
 	treon docs/ --threads 5

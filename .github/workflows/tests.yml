@@ -18,21 +18,19 @@ jobs:
             TOXENV: "py38"
           - python-version: 3.9
             TOXENV: "py39"
-
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      - name: Checkout Repo
+        uses: actions/checkout@v2
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install Dependencies
-        run: pip install --upgrade pip --user
-      - name: Test with Make
-        env:
-          TOXENV: ${{ matrix.TOXENV }}
-        run: pip install -r requirements.txt requirements-dev.txt && make test
+        run: pip install -r requirements.txt requirements-dev.txt
+      - name: Linter Checks
+        run: make lint
+      - name: Notebook Tests
+        run: make test
 
   test_macOS:
     runs-on: macOS-latest
@@ -47,21 +45,19 @@ jobs:
             TOXENV: "py39"
           - python-version: "3.10"
             TOXENV: "py310"
-
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      - name: Checkout Repo
+        uses: actions/checkout@v2
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install Dependencies
-        run: pip install --upgrade pip --user
-      - name: Test with Make
-        env:
-          TOXENV: ${{ matrix.TOXENV }}
-        run: pip install -r requirements.txt requirements-dev.txt && make test
+        run: pip install -r requirements.txt requirements-dev.txt
+      - name: Linter Checks
+        run: make lint
+      - name: Notebook Tests
+        run: make test
 
   test_windows:
     runs-on: windows-latest
@@ -76,18 +72,16 @@ jobs:
             TOXENV: "py39"
           - python-version: "3.10"
             TOXENV: "py310"
-
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      - name: Checkout Repo
+        uses: actions/checkout@v2
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install Dependencies
-        run: pip install --upgrade pip --user
-      - name: Test with Make
-        env:
-          TOXENV: ${{ matrix.TOXENV }}
-        run: pip install -r requirements.txt requirements-dev.txt && make test
+        run: pip install -r requirements.txt requirements-dev.txt
+      - name: Linter Checks
+        run: make lint
+      - name: Notebook Tests
+        run: make test
