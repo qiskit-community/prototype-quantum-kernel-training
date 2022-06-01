@@ -1,11 +1,13 @@
 name: Tests
+
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
   schedule:
     - cron: '0 0 ? * 0 *'
+
 jobs:
   test_linux:
     runs-on: ubuntu-latest
@@ -26,11 +28,15 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install Dependencies
-        run: pip install -r requirements.txt requirements-dev.txt
+        run: |
+          pip install -r requirements.txt requirements-dev.txt
+          pip freeze
       - name: Linter Checks
-        run: make lint
+        run: |
+          make lint
       - name: Notebook Tests
-        run: make test
+        run: |
+          make test
 
   test_macOS:
     runs-on: macOS-latest
@@ -53,11 +59,14 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install Dependencies
-        run: pip install -r requirements.txt requirements-dev.txt
+        run: |
+          pip install -r requirements.txt requirements-dev.txt
       - name: Linter Checks
-        run: make lint
+        run: |
+          make lint
       - name: Notebook Tests
-        run: make test
+        run: |
+          make test
 
   test_windows:
     runs-on: windows-latest
@@ -80,8 +89,11 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install Dependencies
-        run: pip install -r requirements.txt requirements-dev.txt
+        run: |
+          pip install -r requirements.txt requirements-dev.txt
       - name: Linter Checks
-        run: make lint
+        run: |
+          make lint
       - name: Notebook Tests
-        run: make test
+        run: |
+          make test
