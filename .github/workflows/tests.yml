@@ -1,93 +1,74 @@
 name: Tests
+
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
   schedule:
-    - cron: '0 1 * * *'
+    - cron: '0 2 ? * *'
+
 jobs:
   test_linux:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        include:
-          - python-version: 3.7
-            TOXENV: "py37"
-          - python-version: 3.8
-            TOXENV: "py38"
-          - python-version: 3.9
-            TOXENV: "py39"
-
+        python-version: ["3.7", "3.8", "3.9"]
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v3
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install Dependencies
-        run: pip install --upgrade pip tox --user
-      - name: Test with tox 
-        env:
-          TOXENV: ${{ matrix.TOXENV }}
-        run: python -m tox
-
+        run: |
+          python -m pip install --upgrade pip --user
+          pip install -r requirements.txt -r requirements-dev.txt --user
+      - name: Linter Checks
+        run: |
+          make lint
+      - name: Notebook Tests
+        run: |
+          make test
   test_macOS:
     runs-on: macOS-latest
     strategy:
       matrix:
-        include:
-          - python-version: 3.7
-            TOXENV: "py37"
-          - python-version: 3.8
-            TOXENV: "py38"
-          - python-version: 3.9
-            TOXENV: "py39"
-          - python-version: "3.10"
-            TOXENV: "py310"
-
+        python-version: ["3.7", "3.8", "3.9", "3.10"]
     steps:
       - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install Dependencies
-        run: pip install --upgrade pip tox --user
-      - name: Test with tox
-        env:
-          TOXENV: ${{ matrix.TOXENV }}
-        run: python -m tox
-
+        run: |
+          python -m pip install --upgrade pip --user
+          pip install -r requirements.txt -r requirements-dev.txt
+      - name: Linter Checks
+        run: |
+          make lint
+      - name: Notebook Tests
+        run: |
+          make test
   test_windows:
     runs-on: windows-latest
     strategy:
       matrix:
-        include:
-          - python-version: 3.7
-            TOXENV: "py37"
-          - python-version: 3.8
-            TOXENV: "py38"
-          - python-version: 3.9
-            TOXENV: "py39"
-          - python-version: "3.10"
-            TOXENV: "py310"
-
+        python-version: ["3.7", "3.8", "3.9", "3.10"]
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v3
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v3
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install Dependencies
-        run: pip install --upgrade pip tox --user
-      - name: Test with tox
-        env:
-          TOXENV: ${{ matrix.TOXENV }}
-        run: python -m tox
+        run: |
+          python -m pip install --upgrade pip --user
+          pip install -r requirements.txt -r requirements-dev.txt --user
+      - name: Linter Checks
+        run: |
+          make lint
+      - name: Notebook Tests
+        run: |
+          make test
