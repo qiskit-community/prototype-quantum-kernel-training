@@ -1,0 +1,29 @@
+name: Qiskit Development Version Notebook Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 1 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+        with:
+          fetch-depth: 1
+      - name: Install Dependencies
+        run: |
+          pip install -U pip
+          sed -i 's|^\(qiskit[A-Za-z-]*\).*|git+https://github.com/Qiskit/\1|' \
+              requirements-dev.txt requirements.txt
+          pip install -r requirements-dev.txt -r requirements.txt
+          pip freeze
+        shell: bash
+      - name: Run Makefile
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
+        run: make test
