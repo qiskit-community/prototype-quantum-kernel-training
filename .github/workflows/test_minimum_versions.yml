@@ -24,4 +24,4 @@ jobs:
         env:
           TOKEN: ${{ secrets.TOKEN }}
         run: |
-            treon docs/ --threads 7
+            pytest  --nbmake "docs/"
