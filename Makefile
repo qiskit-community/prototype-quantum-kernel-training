@@ -14,4 +14,4 @@ lint:
 	black --check docs
 
 test:
-	treon docs/ --threads 5
+	pytest --nbmake "docs/"
