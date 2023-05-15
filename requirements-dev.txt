@@ -1,5 +1,3 @@
-coverage>=5.5
-pylint>=2.9.5
-tox>=3.24.0
-treon>=0.1.3
-nbqa>=1.1.1
+nbmake>=1.3.3
+black[jupyter]==22.3.0
+ipywidgets>=7.7.1

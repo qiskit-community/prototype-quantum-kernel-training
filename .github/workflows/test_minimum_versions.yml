@@ -20,7 +20,8 @@ jobs:
           pip install -r requirements-dev.txt -r requirements.txt
           pip freeze
         shell: bash
-      - name: Run Makefile
+      - name: Run Tests
         env:
           TOKEN: ${{ secrets.TOKEN }}
-        run: make test
+        run: |
+            pytest  --nbmake "docs/"
