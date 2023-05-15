@@ -15,7 +15,7 @@ jobs:
           fetch-depth: 1
       - name: Install Dependencies
         run: |
-          pip install -U pip
+          pip install pip==22.2.2
           sed -i 's/>=/==/g' requirements-dev.txt requirements.txt
           pip install -r requirements-dev.txt -r requirements.txt
           pip freeze
