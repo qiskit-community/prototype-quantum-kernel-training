@@ -81,7 +81,7 @@ The structure of the QKT Toolkit is illustrated in the diagram below. New compon
 ***New Integrations into Qiskit Machine Learning***
 
 * `QuantumKernelTrainer`: (New) Class to manage quantum kernel training for a given loss function and optimizer.
-* `QuantumKernel`: Option to handle quantum kernels with trainable parameters.
+* `TrainableFidelityQuantumKernel`: Option to handle quantum kernels with trainable parameters.
 * `KernelLoss`: (New) Base class to calculate loss of quantum kernel functions over trainable parameters and input data.
 * `SVCLoss(KernelLoss)`: (New) Class to compute loss corresponding to QKA for classification tasks.
 

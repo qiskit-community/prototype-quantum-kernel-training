@@ -20,6 +20,7 @@ import numpy as np
 from qiskit import QuantumCircuit
 from qiskit.circuit import ParameterVector
 
+
 class CovariantFeatureMap(QuantumCircuit):
     """The Covariant Feature Map circuit.
 
@@ -46,7 +47,6 @@ class CovariantFeatureMap(QuantumCircuit):
         entanglement: Union[str, List[List[int]], Callable[[int], List[int]]] = None,
         single_training_parameter: bool = False,
         name: str = "CovariantFeatureMap",
-
     ) -> None:
         """Create a new Covariant Feature Map circuit.
 
@@ -64,7 +64,7 @@ class CovariantFeatureMap(QuantumCircuit):
         self.feature_dimension = feature_dimension
         self.entanglement = entanglement
         self.single_training_parameter = single_training_parameter
-        self.user_parameters = None
+        self.training_parameters = None
         self.input_parameters = None
 
         num_qubits = feature_dimension / 2
@@ -77,43 +77,39 @@ class CovariantFeatureMap(QuantumCircuit):
 
     @property
     def settings(self) -> Dict[str, Any]:
-        user_parameters_list = [param for param in self.user_parameters]
+        training_parameters_list = [param for param in self.training_parameters]
         input_parameters_list = [param for param in self.input_parameters]
         return {
             "feature_dimension": self.feature_dimension,
             "entanglement": self.entanglement,
             "single_training_parameter": self.single_training_parameter,
-            "user_parameters": user_parameters_list,
+            "training_parameters": training_parameters_list,
             "input_parameters": input_parameters_list,
         }
-
 
     def _generate_feature_map(self):
         # If no entanglement scheme specified, use linear entanglement
         if self.entanglement is None:
-            self.entanglement = [
-                [i, i+1]
-                for i in range(self.num_qubits - 1)
-            ]
+            self.entanglement = [[i, i + 1] for i in range(self.num_qubits - 1)]
 
         # Vector of data parameters
         input_params = ParameterVector("x_par", self.feature_dimension)
 
         # Use a single parameter to rotate each qubit if sharing is desired
         if self.single_training_parameter:
-            user_params = ParameterVector("\u03B8_par", 1)
+            training_params = ParameterVector("\u03B8_par", 1)
             # Create an initial rotation layer using a single Parameter
             for i in range(self.num_qubits):
-                self.ry(user_params[0], self.qubits[i])
+                self.ry(training_params[0], self.qubits[i])
 
         # Train each qubit's initial rotation individually
         else:
-            user_params = ParameterVector("\u03B8_par", self.num_qubits)
+            training_params = ParameterVector("\u03B8_par", self.num_qubits)
             # Create an initial rotation layer of trainable parameters
             for i in range(self.num_qubits):
-                self.ry(user_params[i], self.qubits[i])
+                self.ry(training_params[i], self.qubits[i])
 
-        self.user_parameters = user_params
+        self.training_parameters = training_params
         self.input_parameters = input_params
 
         # Create the entanglement layer

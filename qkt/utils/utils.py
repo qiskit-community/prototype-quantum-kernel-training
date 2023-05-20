@@ -16,6 +16,7 @@ import numpy as np
 
 class QKTCallback:
     """Callback wrapper class."""
+
     def __init__(self) -> None:
         self._data = [[] for i in range(5)]
 
@@ -42,18 +43,18 @@ class QKTCallback:
 
 def train_test_split(data_filepath, num_train=10, num_test=10):
     """Split a dataset into training and test sets."""
-    df = pd.read_csv(data_filepath, sep=',', header=None)
+    df = pd.read_csv(data_filepath, sep=",", header=None)
     data = df.values
 
-    train = data[:2*num_train, :]
-    test = data[2*num_train:2*(num_train+num_test), :]
+    train = data[: 2 * num_train, :]
+    test = data[2 * num_train : 2 * (num_train + num_test), :]
 
-    ind = np.argsort(train[:,-1])
-    X_train = train[ind][:,:-1]
-    y_train = train[ind][:,-1]
+    ind = np.argsort(train[:, -1])
+    X_train = train[ind][:, :-1]
+    y_train = train[ind][:, -1]
 
-    ind = np.argsort(test[:,-1])
-    X_test = test[ind][:,:-1]
-    y_test = test[ind][:,-1]
+    ind = np.argsort(test[:, -1])
+    X_test = test[ind][:, :-1]
+    y_test = test[ind][:, -1]
 
     return X_train, y_train, X_test, y_test
