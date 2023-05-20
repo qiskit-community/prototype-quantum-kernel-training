@@ -20,6 +20,7 @@ import numpy as np
 from qiskit import QuantumCircuit
 from qiskit.circuit import ParameterVector
 
+
 class CovariantFeatureMap(QuantumCircuit):
     """The Covariant Feature Map circuit.
 
@@ -46,7 +47,6 @@ class CovariantFeatureMap(QuantumCircuit):
         entanglement: Union[str, List[List[int]], Callable[[int], List[int]]] = None,
         single_training_parameter: bool = False,
         name: str = "CovariantFeatureMap",
-
     ) -> None:
         """Create a new Covariant Feature Map circuit.
 
@@ -87,14 +87,10 @@ class CovariantFeatureMap(QuantumCircuit):
             "input_parameters": input_parameters_list,
         }
 
-
     def _generate_feature_map(self):
         # If no entanglement scheme specified, use linear entanglement
         if self.entanglement is None:
-            self.entanglement = [
-                [i, i+1]
-                for i in range(self.num_qubits - 1)
-            ]
+            self.entanglement = [[i, i + 1] for i in range(self.num_qubits - 1)]
 
         # Vector of data parameters
         input_params = ParameterVector("x_par", self.feature_dimension)
