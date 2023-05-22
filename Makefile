@@ -8,10 +8,12 @@
 # copyright notice, and modified files need to carry a notice indicating
 # that they have been altered from the originals.
 
+PYTEST_FLAGS =
+
 .PHONY: lint test
 
 lint:
 	black --check docs
 
 test:
-	pytest --nbmake "docs/"
+	pytest --nbmake $(PYTEST_FLAGS) "docs/"

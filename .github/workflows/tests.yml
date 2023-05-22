@@ -29,7 +29,7 @@ jobs:
           make lint
       - name: Notebook Tests
         run: |
-          make test
+          make test PYTEST_FLAGS="-Werror"
   test_macOS:
     runs-on: macOS-latest
     strategy:
